@@ -3,15 +3,15 @@ name: Build MT7621-2
 on: 
   release:
     types: [published]
-#  push:
- #   tags:
- #   - 'v*'
+  push:
+    tags:
+    - 'v*'
   #  branches: 
   #    - master
 #  schedule:
 #    - cron: 0 17 * * 4
-#  watch:
- #   types: [started]
+  watch:
+    types: [started]
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
         mv 1.15.6 1.14.13
     - name: Build Firmware
       env:
-        TNAME: "K2P-USB-5.0"
+        TNAME: "JDC-1-5.0"
       run: |
         cwd=`pwd`
         CONFIG_TOOLCHAIN_DIR=${cwd//\//\\\/}\\/toolchain-mipsel
